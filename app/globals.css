@@ -13,35 +13,35 @@
   --popover-foreground: oklch(0.205 0 0); /* #1f2937 */
   --primary: oklch(0.269 0 0); /* #374151 - gray-700 for headers */
   --primary-foreground: oklch(1 0 0); /* #ffffff */
-  --secondary: oklch(0.627 0.265 303.9); /* #6366f1 - indigo for CTAs */
-  --secondary-foreground: oklch(1 0 0); /* #ffffff */
+  --secondary: oklch(0.8 0 0); /* white for CTAs */
+  --secondary-foreground: oklch(0.2 0 0); /* dark text */
   --muted: oklch(0.985 0 0); /* #f8fafc */
   --muted-foreground: oklch(0.205 0 0); /* #1f2937 */
-  --accent: oklch(0.627 0.265 303.9); /* #6366f1 - indigo for interactive elements */
-  --accent-foreground: oklch(1 0 0); /* #ffffff */
+  --accent: oklch(0.9 0 0); /* white for interactive elements */
+  --accent-foreground: oklch(0.2 0 0); /* dark text */
   --destructive: oklch(0.577 0.245 27.325); /* #ea580c */
   --destructive-foreground: oklch(1 0 0); /* #ffffff */
   --border: oklch(0.922 0 0); /* #e5e7eb */
   --input: oklch(0.97 0 0); /* #f1f5f9 */
-  --ring: oklch(0.627 0.265 303.9); /* #6366f1 */
-  --chart-1: oklch(0.627 0.265 303.9); /* #6366f1 */
+  --ring: oklch(0.8 0 0); /* white */
+  --chart-1: oklch(0.8 0 0); /* white */
   --chart-2: oklch(0.696 0.17 162.48); /* #10b981 */
   --chart-3: oklch(0.577 0.245 27.325); /* #ea580c */
-  --chart-4: oklch(0.627 0.265 303.9); /* #059669 */
+  --chart-4: oklch(0.8 0 0); /* white */
   --chart-5: oklch(0.769 0.188 70.08); /* #f97316 */
   --radius: 0.5rem;
   --sidebar: oklch(0.985 0 0); /* #f8fafc */
   --sidebar-foreground: oklch(0.205 0 0); /* #1f2937 */
   --sidebar-primary: oklch(1 0 0); /* #ffffff */
   --sidebar-primary-foreground: oklch(0.205 0 0); /* #1f2937 */
-  --sidebar-accent: oklch(0.627 0.265 303.9); /* #6366f1 */
-  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff */
+  --sidebar-accent: oklch(0.8 0 0); /* white */
+  --sidebar-accent-foreground: oklch(0.2 0 0); /* dark text */
   --sidebar-border: oklch(0.922 0 0); /* #e5e7eb */
-  --sidebar-ring: oklch(0.627 0.265 303.9); /* #6366f1 */
+  --sidebar-ring: oklch(0.8 0 0); /* white */
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.145 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -49,25 +49,25 @@
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.985 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.627 0.265 303.9);
-  --secondary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.8 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.627 0.265 303.9);
-  --accent-foreground: oklch(1 0 0);
+  --accent: oklch(0.9 0 0);
+  --accent-foreground: oklch(0.2 0 0);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
-  --ring: oklch(0.627 0.265 303.9);
-  --chart-1: oklch(0.627 0.265 303.9);
+  --ring: oklch(0.8 0 0);
+  --chart-1: oklch(0.8 0 0);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-4: oklch(0.8 0 0);
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.627 0.265 303.9);
+  --sidebar-primary: oklch(0.8 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -123,7 +123,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-foreground;
   }
   /* Added custom heading styles for Montserrat font */
   h1,
@@ -138,7 +138,7 @@
 
   /* Added grid pattern background utility */
   .bg-grid-pattern {
-    background-image: radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
@@ -161,10 +161,10 @@
   @keyframes glow {
     0%,
     100% {
-      box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     }
     50% {
-      box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
     }
   }
 
@@ -186,7 +186,7 @@
   }
 
   .animate-shimmer {
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     background-size: 200% 100%;
     animation: shimmer 2s infinite;
   }

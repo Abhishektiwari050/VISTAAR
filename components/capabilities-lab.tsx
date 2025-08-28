@@ -147,50 +147,50 @@ export function CapabilitiesLab() {
             return (
               <Card
                 key={capability.id}
-                className={`group relative overflow-hidden transition-all duration-300 hover:scale-105 cursor-pointer ${
+                className={`group relative overflow-hidden transition-all duration-200 hover:shadow-md cursor-pointer ${
                   isActive ? capability.borderColor : "border-border"
-                } ${isActive ? "shadow-xl" : "hover:shadow-lg"}`}
+                }`}
                 onMouseEnter={() => setActiveCapability(capability.id)}
                 onMouseLeave={() => setActiveCapability(null)}
               >
-                {/* Background Gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${capability.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                />
-
-                <CardContent className="relative p-6">
-                  {/* Icon */}
+                  {/* Background Gradient */}
                   <div
-                    className={`p-3 rounded-lg bg-gradient-to-br ${capability.color} ${capability.borderColor} border mb-4 w-fit`}
-                  >
-                    <IconComponent className={`w-6 h-6 ${capability.iconColor}`} />
-                  </div>
+                    className={`absolute inset-0 bg-gradient-to-br ${capability.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  />
 
-                  {/* Content */}
-                  <h3 className="text-xl font-heading font-black text-primary mb-2 group-hover:text-accent transition-colors duration-200">
-                    {capability.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{capability.description}</p>
+                  <CardContent className="relative p-6">
+                    {/* Icon */}
+                    <div
+                      className={`p-3 rounded-lg bg-gradient-to-br ${capability.color} ${capability.borderColor} border mb-4 w-fit`}
+                    >
+                      <IconComponent className={`w-6 h-6 ${capability.iconColor}`} />
+                    </div>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {capability.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
+                    {/* Content */}
+                    <h3 className="text-xl font-heading font-black text-primary mb-2 group-hover:text-accent transition-colors duration-200">
+                      {capability.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{capability.description}</p>
 
-                  {/* Demo Link */}
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="group/btn text-accent hover:text-accent-foreground hover:bg-accent transition-all duration-200 p-0 h-auto font-medium text-sm"
-                  >
-                    <Play className="mr-2 w-3 h-3" />
-                    {capability.demo}
-                  </Button>
-                </CardContent>
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {capability.tags.map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    {/* Demo Link */}
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="group/btn text-accent hover:text-accent-foreground hover:bg-accent transition-all duration-200 p-0 h-auto font-medium text-sm"
+                    >
+                      <Play className="mr-2 w-3 h-3" />
+                      {capability.demo}
+                    </Button>
+                  </CardContent>
               </Card>
             )
           })}

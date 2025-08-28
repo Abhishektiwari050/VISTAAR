@@ -22,7 +22,6 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Vistaar Agency - Next-Gen Digital Services",
   description: "Premium digital agency offering SEO, social media management, web design, and growth strategy services",
-  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -31,8 +30,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${montserrat.variable} ${openSans.variable} ${GeistMono.variable} antialiased`}>
+    <html lang="en" className="dark">
+      <head>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.52/build/spline-viewer.js"></script>
+        <link rel="icon" href="/vistaar-logo.svg" type="image/svg+xml" />
+      </head>
+      <body className={`font-sans ${montserrat.variable} ${openSans.variable} ${GeistMono.variable} antialiased`} suppressHydrationWarning={true}>
         {children}
       </body>
     </html>

@@ -88,9 +88,9 @@ export function ServicesSection() {
             return (
               <Card
                 key={service.id}
-                className={`group relative overflow-hidden transition-all duration-300 hover:scale-105 cursor-pointer ${
+                className={`group relative overflow-hidden transition-all duration-200 hover:shadow-lg cursor-pointer ${
                   isActive ? service.borderColor : "border-border"
-                } ${isActive ? "shadow-2xl" : "hover:shadow-xl"}`}
+                }`}
                 onMouseEnter={() => setActiveService(service.id)}
                 onMouseLeave={() => setActiveService(null)}
               >
