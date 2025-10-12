@@ -187,7 +187,7 @@ export function CapabilitiesLab() {
                         alt={item.title}
                         src={item.image || "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"}
                         onLoad={(e) => {
-                          const loader = e.currentTarget.previousElementSibling;
+                          const loader = e.currentTarget.previousElementSibling as HTMLElement;
                           if (loader) loader.style.display = 'none';
                         }}
                         style={{
