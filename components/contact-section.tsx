@@ -96,7 +96,10 @@ export function ContactSection() {
         })
       }
     } catch (error) {
-      console.error('Form submission error:', error)
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Form submission error:', error)
+      }
+      alert('Failed to submit form. Please try again or contact us directly at services.vistaar@gmail.com')
     } finally {
       setIsSubmitting(false)
     }

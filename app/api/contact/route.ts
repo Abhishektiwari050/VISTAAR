@@ -5,6 +5,14 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, company, projectType, budget, timeline, message } = body;
 
+    // Validate required fields
+    if (!name || !email || !projectType || !message) {
+      return NextResponse.json(
+        { success: false, message: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
+
     // Email notification (you can integrate with services like SendGrid, Resend, etc.)
     const emailData = {
       to: 'services.vistaar@gmail.com',
@@ -22,11 +30,19 @@ export async function POST(request: Request) {
     };
 
     // Log the submission (replace with actual email service)
-    console.log('Contact form submission:', emailData);
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Contact form submission:', emailData);
+    }
 
     return NextResponse.json({ success: true, message: 'Form submitted successfully' });
   } catch (error) {
-    console.error('Contact form error:', error);
-    return NextResponse.json({ success: false, message: 'Failed to submit form' }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Contact form error:', errorMessage);
+    }
+    return NextResponse.json(
+      { success: false, message: 'Failed to submit form' },
+      { status: 500 }
+    );
   }
 }

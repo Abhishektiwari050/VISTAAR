@@ -22,6 +22,13 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Vistaar Agency - Next-Gen Digital Services",
   description: "Premium digital agency offering SEO, social media management, web design, and growth strategy services",
+  keywords: ["digital agency", "web design", "SEO", "social media", "growth strategy"],
+  authors: [{ name: "Vistaar Agency" }],
+  openGraph: {
+    title: "Vistaar Agency - Next-Gen Digital Services",
+    description: "Premium digital agency offering SEO, social media management, web design, and growth strategy services",
+    type: "website",
+  },
 }
 
 export default function RootLayout({
