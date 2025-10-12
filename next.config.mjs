@@ -12,15 +12,13 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  experimental: {
-    optimizeCss: true,
-  },
   typescript: {
     ignoreBuildErrors: false,
   },
   eslint: {
     ignoreDuringBuilds: false,
   },
+  swcMinify: true,
 };
 
 export default nextConfig;
