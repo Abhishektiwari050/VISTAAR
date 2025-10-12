@@ -1,22 +1,21 @@
 "use client";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 
-export const CometCard = ({
+import React from "react";
+import { cn } from "@/lib/utils";
+
+export function CometCard({
   children,
   className,
 }: {
   children: React.ReactNode;
   className?: string;
-}) => {
+}) {
   return (
-    <motion.div
-      className={cn("relative overflow-hidden", className)}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.2 }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full animate-shimmer"></div>
-      {children}
-    </motion.div>
+    <div className={cn("relative overflow-hidden", className)}>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite] pointer-events-none" />
+      <div className="relative z-10">
+        {children}
+      </div>
+    </div>
   );
-};
+}

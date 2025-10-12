@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Mail, Phone, Send, MessageCircle, Calendar, Rocket, CheckCircle, Clock, Users } from "lucide-react"
+import { LoaderOne } from "@/components/ui/loader"
 
 const contactMethods = [
   {
@@ -73,11 +74,32 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          projectType: "",
+          budget: "",
+          timeline: "",
+          message: "",
+        })
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
@@ -105,10 +127,10 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-12 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full border border-accent/20 mb-6">
             <Rocket className="w-4 h-4 text-accent mr-2" />
             <span className="text-accent font-medium text-sm">Let's Build Together</span>
@@ -124,7 +146,7 @@ export function ContactSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-12">
           {/* Contact Methods */}
           <div className="lg:col-span-1">
             <div className="space-y-6">
@@ -191,7 +213,7 @@ export function ContactSection() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <Card className="shadow-xl border-accent/10 hover-lift">
-              <CardContent className="p-8">
+              <CardContent className="p-4 md:p-8">
                 <div className="mb-6">
                   <h3 className="text-2xl font-heading font-black text-primary mb-2">Start Your Project</h3>
                   <p className="text-muted-foreground">
@@ -199,9 +221,9 @@ export function ContactSection() {
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                   {/* Basic Info */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div>
                       <Label htmlFor="name" className="text-sm font-medium text-foreground mb-2 block">
                         Full Name *
@@ -336,8 +358,8 @@ export function ContactSection() {
                     <span className="relative z-10 flex items-center justify-center">
                       {isSubmitting ? (
                         <>
-                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                          Sending Message...
+                          <LoaderOne />
+                          <span className="ml-3">Sending Message...</span>
                         </>
                       ) : (
                         <>

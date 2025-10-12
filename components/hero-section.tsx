@@ -31,7 +31,6 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen bg-black">
       <spline-viewer url="https://prod.spline.design/s9JX6Dq2mxbRuOvX/scene.splinecode"></spline-viewer>
-      <spline-viewer url="https://prod.spline.design/s9JX6Dq2mxbRuOvX/scene.splinecode"></spline-viewer>
       
       {/* Dynamic Navbar */}
       <nav className={`fixed z-50 transition-all duration-300 ease-out ${

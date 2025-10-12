@@ -32,8 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.52/build/spline-viewer.js"></script>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.52/build/spline-viewer.js" defer></script>
         <link rel="icon" href="/vistaar-logo.svg" type="image/svg+xml" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
       <body className={`font-sans ${montserrat.variable} ${openSans.variable} ${GeistMono.variable} antialiased`} suppressHydrationWarning={true}>
         {children}

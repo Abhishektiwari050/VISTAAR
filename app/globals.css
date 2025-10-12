@@ -191,6 +191,20 @@
     animation: shimmer 2s infinite;
   }
 
+  /* Performance optimizations */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img {
+    content-visibility: auto;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
   /* Added scroll-triggered animation utilities */
   .scroll-fade-in {
     opacity: 0;
@@ -220,5 +234,24 @@
 
   .magnetic-button:hover {
     transform: scale(1.05);
+  }
+
+  /* Hide Spline logo and branding */
+  spline-viewer::part(logo) {
+    display: none !important;
+  }
+  
+  spline-viewer {
+    --spline-logo-display: none;
+    contain: layout style paint;
+  }
+
+  spline-viewer .spline-watermark,
+  spline-viewer [class*="watermark"],
+  spline-viewer [class*="logo"],
+  spline-viewer [class*="branding"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
 }

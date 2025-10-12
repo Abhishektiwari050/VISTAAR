@@ -1,9 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import { LoaderOne } from "@/components/ui/loader"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
+import { CometCard } from "@/components/ui/comet-card"
 import {
   Palette,
   Code,
@@ -91,25 +94,25 @@ const showcaseItems = [
   {
     title: "Interactive 3D Product Showcase",
     description: "Immersive product experiences with WebGL",
-    image: "/3d-product-showcase.png",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&auto=format&fit=crop",
     tech: ["Three.js", "WebGL", "GSAP"],
   },
   {
     title: "AI-Powered Content Generator",
     description: "Smart content creation with machine learning",
-    image: "/ai-content-generator.png",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
     tech: ["OpenAI", "React", "Python"],
   },
   {
     title: "Real-time Analytics Dashboard",
     description: "Live data visualization with custom charts",
-    image: "/analytics-dashboard.png",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
     tech: ["D3.js", "WebSocket", "Node.js"],
   },
   {
     title: "Motion Graphics Landing Page",
     description: "Cinematic animations and scroll effects",
-    image: "/motion-graphics-landing.png",
+    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&auto=format&fit=crop",
     tech: ["Framer Motion", "GSAP", "CSS3"],
   },
 ]
@@ -139,59 +142,12 @@ export function CapabilitiesLab() {
         </div>
 
         {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-20 place-items-center px-4">
           {capabilities.map((capability) => {
             const IconComponent = capability.icon
-            const isActive = activeCapability === capability.id
 
             return (
-              <Card
-                key={capability.id}
-                className={`group relative overflow-hidden transition-all duration-200 hover:shadow-md cursor-pointer ${
-                  isActive ? capability.borderColor : "border-border"
-                }`}
-                onMouseEnter={() => setActiveCapability(capability.id)}
-                onMouseLeave={() => setActiveCapability(null)}
-              >
-                  {/* Background Gradient */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${capability.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                  />
-
-                  <CardContent className="relative p-6">
-                    {/* Icon */}
-                    <div
-                      className={`p-3 rounded-lg bg-gradient-to-br ${capability.color} ${capability.borderColor} border mb-4 w-fit`}
-                    >
-                      <IconComponent className={`w-6 h-6 ${capability.iconColor}`} />
-                    </div>
-
-                    {/* Content */}
-                    <h3 className="text-xl font-heading font-black text-primary mb-2 group-hover:text-accent transition-colors duration-200">
-                      {capability.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{capability.description}</p>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {capability.tags.map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    {/* Demo Link */}
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="group/btn text-accent hover:text-accent-foreground hover:bg-accent transition-all duration-200 p-0 h-auto font-medium text-sm"
-                    >
-                      <Play className="mr-2 w-3 h-3" />
-                      {capability.demo}
-                    </Button>
-                  </CardContent>
-              </Card>
+              <ThreeDCard key={capability.id} capability={capability} IconComponent={IconComponent} />
             )
           })}
         </div>
@@ -206,51 +162,47 @@ export function CapabilitiesLab() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 place-items-center max-w-6xl mx-auto px-4">
             {showcaseItems.map((item, index) => (
-              <Card
-                key={index}
-                className={`group overflow-hidden transition-all duration-300 hover:shadow-xl cursor-pointer ${
-                  activeShowcase === index ? "ring-2 ring-accent/50" : ""
-                }`}
-                onClick={() => setActiveShowcase(index)}
-              >
-                <CardContent className="p-0">
-                  {/* Image */}
-                  <div className="relative overflow-hidden aspect-video bg-gradient-to-br from-accent/10 to-secondary/10">
-                    <img
-                      src={item.image || "/placeholder.svg"}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Button
-                        size="lg"
-                        className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-white/30"
-                      >
-                        <Eye className="mr-2 w-5 h-5" />
-                        View Demo
-                      </Button>
+              <CometCard key={index} className="w-full max-w-sm">
+                <button
+                  type="button"
+                  className="flex w-full cursor-pointer flex-col items-stretch rounded-[16px] border-0 bg-[#1F2121] p-2 md:p-4 saturate-0 transition-all duration-300 hover:saturate-100 h-[350px] md:h-[400px]"
+                  onClick={() => setActiveShowcase(index)}
+                  style={{
+                    transformStyle: "preserve-3d",
+                    transform: "none",
+                    opacity: 1,
+                  }}
+                >
+                  <div className="flex-1 p-2">
+                    <div className="relative aspect-[3/4] w-full h-full">
+                      <div className="absolute inset-0 flex items-center justify-center bg-[#000000]">
+                        <LoaderOne />
+                      </div>
+                      <img
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full rounded-[12px] bg-[#000000] object-cover contrast-75 hover:contrast-100 transition-all duration-300"
+                        alt={item.title}
+                        src={item.image || "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"}
+                        onLoad={(e) => {
+                          const loader = e.currentTarget.previousElementSibling;
+                          if (loader) loader.style.display = 'none';
+                        }}
+                        style={{
+                          boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 6px 0px",
+                          opacity: 1,
+                        }}
+                      />
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <div className="p-6">
-                    <h4 className="text-xl font-heading font-black text-primary mb-2 group-hover:text-accent transition-colors duration-200">
-                      {item.title}
-                    </h4>
-                    <p className="text-muted-foreground mb-4 leading-relaxed">{item.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {item.tech.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
+                  <div className="flex flex-shrink-0 items-center justify-between p-3 font-mono text-white border-t border-gray-700">
+                    <div className="text-xs font-medium truncate pr-2">{item.title}</div>
+                    <div className="text-xs text-gray-300 opacity-50 flex-shrink-0">#{String(index + 1).padStart(2, '0')}</div>
                   </div>
-                </CardContent>
-              </Card>
+                </button>
+              </CometCard>
             ))}
           </div>
         </div>
@@ -287,5 +239,64 @@ export function CapabilitiesLab() {
         </div>
       </div>
     </section>
+  )
+}
+
+function ThreeDCard({ capability, IconComponent }: { capability: any, IconComponent: any }) {
+  return (
+    <CardContainer className="inter-var py-0 w-full max-w-sm">
+      <CardBody className={`bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-[400px] md:h-[450px] rounded-xl p-4 md:p-6 border flex flex-col justify-between`}>
+        <div>
+          <CardItem
+            translateZ="50"
+            className="text-lg font-bold text-neutral-600 dark:text-white mb-3 line-clamp-2"
+          >
+            {capability.title}
+          </CardItem>
+          <CardItem
+            as="p"
+            translateZ="60"
+            className="text-neutral-500 text-sm dark:text-neutral-300 mb-6 line-clamp-3"
+          >
+            {capability.description}
+          </CardItem>
+        </div>
+        
+        <CardItem translateZ="100" className="w-full mb-6">
+          <div className={`p-4 rounded-lg bg-gradient-to-br ${capability.color} ${capability.borderColor} border w-fit mx-auto`}>
+            <IconComponent className={`w-8 h-8 ${capability.iconColor}`} />
+          </div>
+        </CardItem>
+        
+        <div>
+          <CardItem translateZ="80" className="mb-6">
+            <div className="flex flex-wrap gap-2 justify-center">
+              {capability.tags.map((tag: string) => (
+                <Badge key={tag} variant="outline" className="text-xs">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          </CardItem>
+          
+          <div className="flex justify-between items-center gap-2">
+            <CardItem
+              translateZ={20}
+              as="button"
+              className="px-3 py-2 rounded-xl text-xs font-normal dark:text-white hover:bg-white/10 transition-colors flex-1 truncate"
+            >
+              {capability.demo} →
+            </CardItem>
+            <CardItem
+              translateZ={20}
+              as="button"
+              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold hover:scale-105 transition-transform flex-shrink-0"
+            >
+              Explore
+            </CardItem>
+          </div>
+        </div>
+      </CardBody>
+    </CardContainer>
   )
 }
