@@ -23,7 +23,7 @@ export default function HomePage() {
       
       <section className="relative min-h-screen bg-black overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
-          <spline-viewer url="https://prod.spline.design/s9JX6Dq2mxbRuOvX/scene.splinecode"></spline-viewer>
+          <div dangerouslySetInnerHTML={{ __html: '<spline-viewer url="https://prod.spline.design/s9JX6Dq2mxbRuOvX/scene.splinecode"></spline-viewer>' }} />
         </div>
         <div className="absolute bottom-0 right-0 z-50 bg-black rounded-tl-lg px-4 py-2 md:px-8 md:py-4 flex items-center gap-2 md:gap-3 min-w-[120px] md:min-w-[200px] h-[40px] md:h-[60px]">
           <img src="/vistaar-logo.svg" alt="Vistaar" className="w-5 h-5 md:w-8 md:h-8" />
