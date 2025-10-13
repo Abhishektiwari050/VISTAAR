@@ -25,7 +25,7 @@ export default function HomePage() {
         <div className="absolute inset-0 w-full h-full">
           <div dangerouslySetInnerHTML={{ __html: '<spline-viewer url="https://prod.spline.design/s9JX6Dq2mxbRuOvX/scene.splinecode"></spline-viewer>' }} />
         </div>
-        <div className="absolute bottom-0 right-0 z-50 bg-black px-6 py-3 md:px-10 md:py-5 flex items-center gap-2 md:gap-3 min-w-[140px] md:min-w-[220px] h-[50px] md:h-[70px]">
+        <div className="absolute bottom-3 right-3 md:bottom-4 md:right-4 z-50 bg-black rounded-lg px-6 py-3 md:px-10 md:py-5 flex items-center gap-2 md:gap-3 min-w-[140px] md:min-w-[220px] h-[50px] md:h-[70px]">
           <img src="/vistaar-logo.svg" alt="Vistaar" className="w-6 h-6 md:w-9 md:h-9" />
           <span className="text-white text-sm md:text-base font-bold">Vistaar</span>
         </div>
