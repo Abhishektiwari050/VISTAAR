@@ -1,5 +1,5 @@
-"use client"
-
+"use client";
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react"
 import { LoaderOne } from "@/components/ui/loader"
 import { Card, CardContent } from "@/components/ui/card"
@@ -103,26 +103,13 @@ const showcaseItems = [
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
     tech: ["OpenAI", "React", "Python"],
   },
-  {
-    title: "Real-time Analytics Dashboard",
-    description: "Live data visualization with custom charts",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
-    tech: ["D3.js", "WebSocket", "Node.js"],
-  },
-  {
-    title: "Motion Graphics Landing Page",
-    description: "Cinematic animations and scroll effects",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&auto=format&fit=crop",
-    tech: ["Framer Motion", "GSAP", "CSS3"],
-  },
-]
+];
 
 export function CapabilitiesLab() {
-  const [activeCapability, setActiveCapability] = useState<string | null>(null)
-  const [activeShowcase, setActiveShowcase] = useState(0)
+  const [activeShowcase, setActiveShowcase] = useState<number | null>(null);
 
   return (
-    <section id="capabilities" className="py-24 bg-muted/30">
+    <section id="capabilities" className="py-24 bg-muted/30" >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -136,7 +123,7 @@ export function CapabilitiesLab() {
             <span className="text-accent">Digital Reality</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty">
-            Our creative playground where we push the boundaries of what's possible. Every project is an opportunity to
+            Our creative playground where we push the boundaries of what&apos;s possible. Every project is an opportunity to
             innovate and exceed expectations.
           </p>
         </div>
@@ -215,8 +202,8 @@ export function CapabilitiesLab() {
               <h3 className="text-2xl font-heading font-black text-primary">Ready to Push Boundaries?</h3>
             </div>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Let's collaborate on something extraordinary. Whether it's a complex technical challenge or a creative
-              vision, we're here to make it happen.
+              Let&apos;s collaborate on something extraordinary. Whether it&apos;s a complex technical challenge or a creative
+              vision, we&apos;re here to make it happen.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
@@ -238,7 +225,7 @@ export function CapabilitiesLab() {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 
@@ -261,13 +248,13 @@ function ThreeDCard({ capability, IconComponent }: { capability: any, IconCompon
             {capability.description}
           </CardItem>
         </div>
-        
+
         <CardItem translateZ="100" className="w-full mb-6">
           <div className={`p-4 rounded-lg bg-gradient-to-br ${capability.color} ${capability.borderColor} border w-fit mx-auto`}>
             <IconComponent className={`w-8 h-8 ${capability.iconColor}`} />
           </div>
         </CardItem>
-        
+
         <div>
           <CardItem translateZ="80" className="mb-6">
             <div className="flex flex-wrap gap-2 justify-center">
@@ -278,7 +265,7 @@ function ThreeDCard({ capability, IconComponent }: { capability: any, IconCompon
               ))}
             </div>
           </CardItem>
-          
+
           <div className="flex justify-between items-center gap-2">
             <CardItem
               translateZ={20}

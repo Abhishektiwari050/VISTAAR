@@ -74,7 +74,7 @@ export function ServicesSection() {
             <span className="text-accent">Dominate Digital</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty">
-            From SEO mastery to viral social campaigns, we're your complete digital growth partner. Each service is
+            From SEO mastery to viral social campaigns, we&apos;re your complete digital growth partner. Each service is
             designed to work seamlessly together for maximum impact.
           </p>
         </div>
@@ -88,9 +88,8 @@ export function ServicesSection() {
             return (
               <Card
                 key={service.id}
-                className={`group relative overflow-hidden transition-all duration-200 hover:shadow-lg cursor-pointer ${
-                  isActive ? service.borderColor : "border-border"
-                }`}
+                className={`group relative overflow-hidden transition-all duration-200 hover:shadow-lg cursor-pointer ${isActive ? service.borderColor : "border-border"
+                  }`}
                 onMouseEnter={() => setActiveService(service.id)}
                 onMouseLeave={() => setActiveService(null)}
               >
@@ -148,7 +147,7 @@ export function ServicesSection() {
               <h3 className="text-2xl font-heading font-black text-primary">Ready to Accelerate Your Growth?</h3>
             </div>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Let's discuss how our integrated approach can transform your digital presence and drive measurable results
+              Let&apos;s discuss how our integrated approach can transform your digital presence and drive measurable results
               for your business.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

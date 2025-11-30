@@ -1,28 +1,67 @@
 "use client"
 
-import Link from "next/link"
-import { HeroParallax } from "@/components/hero-parallax"
+import { FadeIn } from "@/components/motion/MotionWrappers"
+import { FocusCards } from "@/components/ui/focus-cards"
+
+const caseStudies = [
+  {
+    title: "Global Exports Ltd",
+    src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop",
+    href: "/work/global-exports"
+  },
+  {
+    title: "TechTrade India",
+    src: "https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=2064&auto=format&fit=crop",
+    href: "/work/techtrade"
+  },
+  {
+    title: "Patel Spices",
+    src: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop",
+    href: "/work/patel-spices"
+  },
+  {
+    title: "EuroFoods Logistics",
+    src: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070&auto=format&fit=crop",
+    href: "/work/eurofoods"
+  },
+  {
+    title: "Asian Textiles",
+    src: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2072&auto=format&fit=crop",
+    href: "/work/asian-textiles"
+  },
+  {
+    title: "Future Tech",
+    src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+    href: "/work/future-tech"
+  }
+]
 
 export default function WorkPage() {
   return (
-    <main className="min-h-screen bg-black">
-      <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-md border-b border-white/5 px-4 md:px-8 py-4 md:py-6 z-50">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/vistaar-logo.svg" alt="Vistaar Logo" className="w-6 h-6 md:w-8 md:h-8" />
-            <h1 className="text-lg md:text-2xl font-heading font-black text-white">Vistaar</h1>
-          </Link>
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/services" className="text-white hover:text-white/70 font-medium text-sm px-4 py-2 rounded-full hover:bg-white/10">Services</Link>
-            <Link href="/work" className="text-white bg-white/10 font-medium text-sm px-4 py-2 rounded-full">Work</Link>
-            <Link href="/capabilities" className="text-white hover:text-white/70 font-medium text-sm px-4 py-2 rounded-full hover:bg-white/10">Capabilities</Link>
-            <Link href="/contact" className="text-white hover:text-white/70 font-medium text-sm px-4 py-2 rounded-full hover:bg-white/10">Contact</Link>
-          </div>
-          <Link href="/contact" className="bg-white text-black hover:bg-white/90 font-semibold rounded-full text-xs md:text-sm px-4 py-2 md:px-6 md:py-3">Let's Build</Link>
+    <main className="min-h-screen bg-black pt-24 pb-20">
+      <div className="container mx-auto px-4 md:px-6">
+        <FadeIn className="mb-16 md:mb-24 text-center">
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
+            Selected <span className="text-accent">Work</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Real results for ambitious exporters. We let the numbers speak for themselves.
+          </p>
+        </FadeIn>
+
+        <div className="mb-24">
+          <FocusCards cards={caseStudies} />
         </div>
-      </nav>
-      <div className="pt-16 md:pt-20">
-        <HeroParallax />
+
+        <FadeIn className="mt-24 text-center">
+          <p className="text-gray-500 mb-6">Want to see more?</p>
+          <a
+            href="/contact"
+            className="text-white font-bold border-b border-accent hover:text-accent transition-colors pb-1"
+          >
+            Request Full Portfolio
+          </a>
+        </FadeIn>
       </div>
     </main>
   )

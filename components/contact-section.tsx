@@ -113,7 +113,7 @@ export function ContactSection() {
             <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6 animate-bounce" />
             <h2 className="text-3xl font-heading font-black text-primary mb-4">Message Sent Successfully!</h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Thank you for reaching out! We've received your message and will get back to you within 2 hours during
+              Thank you for reaching out! We&apos;ve received your message and will get back to you within 2 hours during
               business hours.
             </p>
             <Button
@@ -136,7 +136,7 @@ export function ContactSection() {
         <div className="text-center mb-8 md:mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-accent/10 rounded-full border border-accent/20 mb-6">
             <Rocket className="w-4 h-4 text-accent mr-2" />
-            <span className="text-accent font-medium text-sm">Let's Build Together</span>
+            <span className="text-accent font-medium text-sm">Let&apos;s Build Together</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-heading font-black text-primary mb-6 text-balance">
             Ready to Transform
@@ -144,7 +144,7 @@ export function ContactSection() {
             <span className="text-accent">Your Digital Presence?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty">
-            Every great project starts with a conversation. Tell us about your vision, and let's create something
+            Every great project starts with a conversation. Tell us about your vision, and let&apos;s create something
             extraordinary together.
           </p>
         </div>
@@ -156,7 +156,7 @@ export function ContactSection() {
               <div>
                 <h3 className="text-2xl font-heading font-black text-primary mb-4">Get in Touch</h3>
                 <p className="text-muted-foreground mb-6">
-                  Choose your preferred way to connect with us. We're here to help bring your ideas to life.
+                  Choose your preferred way to connect with us. We&apos;re here to help bring your ideas to life.
                 </p>
               </div>
 
@@ -220,7 +220,7 @@ export function ContactSection() {
                 <div className="mb-6">
                   <h3 className="text-2xl font-heading font-black text-primary mb-2">Start Your Project</h3>
                   <p className="text-muted-foreground">
-                    Fill out the form below and we'll get back to you with a detailed proposal within 24 hours.
+                    Fill out the form below and we&apos;ll get back to you with a detailed proposal within 24 hours.
                   </p>
                 </div>
 
@@ -283,6 +283,7 @@ export function ContactSection() {
                       value={formData.projectType}
                       onChange={handleInputChange}
                       required
+                      aria-label="Project Type"
                       className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm transition-all duration-300 focus:ring-2 focus:ring-accent/20 focus:border-accent hover:border-accent/50"
                     >
                       <option value="">Select a project type</option>
@@ -304,6 +305,7 @@ export function ContactSection() {
                         name="budget"
                         value={formData.budget}
                         onChange={handleInputChange}
+                        aria-label="Budget Range"
                         className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm transition-all duration-300 focus:ring-2 focus:ring-accent/20 focus:border-accent hover:border-accent/50"
                       >
                         <option value="">Select budget range</option>
@@ -323,6 +325,7 @@ export function ContactSection() {
                         name="timeline"
                         value={formData.timeline}
                         onChange={handleInputChange}
+                        aria-label="Timeline"
                         className="w-full px-3 py-2 border border-input bg-background rounded-md text-sm transition-all duration-300 focus:ring-2 focus:ring-accent/20 focus:border-accent hover:border-accent/50"
                       >
                         <option value="">Select timeline</option>

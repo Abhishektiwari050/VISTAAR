@@ -1,5 +1,5 @@
-"use client"
-
+"use client";
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -21,7 +21,7 @@ const caseStudies = [
       { metric: "Conversion Rate", value: "+125%", period: "4 months" },
     ],
     tags: ["SEO", "Web Design", "Growth Strategy"],
-    image: "/modern-saas-dashboard.png",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
     color: "from-blue-500/10 to-cyan-500/10",
     accentColor: "text-blue-500",
     borderColor: "border-blue-500/20",
@@ -39,7 +39,7 @@ const caseStudies = [
       { metric: "Brand Mentions", value: "+380%", period: "3 months" },
     ],
     tags: ["Social Media", "E-commerce", "Brand Strategy"],
-    image: "/luxury-fashion-e-commerce-website.png",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop",
     color: "from-purple-500/10 to-pink-500/10",
     accentColor: "text-purple-500",
     borderColor: "border-purple-500/20",
@@ -57,7 +57,7 @@ const caseStudies = [
       { metric: "Booking Efficiency", value: "+300%", period: "2 months" },
     ],
     tags: ["Local SEO", "Healthcare", "Automation"],
-    image: "/modern-medical-clinic-website.png",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop",
     color: "from-green-500/10 to-emerald-500/10",
     accentColor: "text-green-500",
     borderColor: "border-green-500/20",
@@ -82,7 +82,7 @@ export function CaseStudiesSection() {
             <span className="text-accent">Real Businesses</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty">
-            Every project tells a story of transformation. Here's how we've helped businesses like yours achieve
+            Every project tells a story of transformation. Here&apos;s how we&apos;ve helped businesses like yours achieve
             extraordinary growth through strategic digital solutions.
           </p>
         </div>
@@ -92,9 +92,8 @@ export function CaseStudiesSection() {
           {caseStudies.map((study, index) => (
             <Card
               key={study.id}
-              className={`group overflow-hidden transition-all duration-500 hover:shadow-2xl cursor-pointer ${
-                activeStudy === study.id ? study.borderColor : "border-border"
-              } ${activeStudy === study.id ? "shadow-xl" : ""}`}
+              className={`group overflow-hidden transition-all duration-500 hover:shadow-2xl cursor-pointer ${activeStudy === study.id ? study.borderColor : "border-border"
+                } ${activeStudy === study.id ? "shadow-xl" : ""}`}
               onMouseEnter={() => setActiveStudy(study.id)}
               onMouseLeave={() => setActiveStudy(null)}
             >

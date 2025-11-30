@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import {
   motion,
@@ -14,17 +15,17 @@ const products = [
   {
     title: "TechFlow SaaS Dashboard",
     link: "#",
-    thumbnail: "/modern-saas-dashboard.png",
+    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
   },
   {
     title: "LuxeStyle Fashion Store",
     link: "#",
-    thumbnail: "/luxury-fashion-e-commerce-website.png",
+    thumbnail: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop",
   },
   {
     title: "MedConnect Clinic Portal",
     link: "#",
-    thumbnail: "/modern-medical-clinic-website.png",
+    thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop",
   },
   {
     title: "Digital Marketing Campaign",
@@ -175,15 +176,15 @@ export const HeroParallax = () => {
 
 export const Header = () => {
   const words = "We build beautiful products with the latest technologies and frameworks. We are a team of passionate developers and designers that love to build amazing products.";
-  
+
   return (
     <div className="max-w-7xl relative mx-auto py-10 md:py-20 lg:py-40 px-4 w-full left-0 top-0">
       <h1 className="text-xl md:text-4xl lg:text-7xl font-heading font-black text-white">
         Heavy Design, <br /> <span className="text-white/80">Light Feel</span>
       </h1>
       <div className="max-w-2xl mt-4 md:mt-8">
-        <TextGenerateEffect 
-          words={words} 
+        <TextGenerateEffect
+          words={words}
           className="text-sm md:text-base lg:text-xl text-white/70"
         />
       </div>

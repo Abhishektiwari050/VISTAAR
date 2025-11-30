@@ -4,6 +4,8 @@ import { Montserrat } from "next/font/google"
 import { Open_Sans } from "next/font/google"
 import { GeistMono } from "geist/font/mono"
 import "./globals.css"
+import { FloatingNav } from "@/components/ui/floating-navbar";
+import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,20 +33,38 @@ export const metadata: Metadata = {
   },
 }
 
+const navItems = [
+  {
+    name: "Home",
+    link: "/",
+    icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "Services",
+    link: "/services",
+    icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "Work",
+    link: "/work",
+    icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.52/build/spline-viewer.js" defer></script>
         <link rel="icon" href="/vistaar-logo.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
-      <body className={`font-sans ${montserrat.variable} ${openSans.variable} ${GeistMono.variable} antialiased`} suppressHydrationWarning={true}>
+      <body className={`font-sans ${montserrat.variable} ${openSans.variable} ${GeistMono.variable} antialiased bg-black text-white`}>
+        <FloatingNav navItems={navItems} />
         {children}
       </body>
     </html>

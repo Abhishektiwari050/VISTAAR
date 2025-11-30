@@ -56,11 +56,11 @@ export function Navigation() {
       <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />
-        <NavbarButton 
+        <NavbarButton
           variant="primary"
           onClick={() => scrollToSection("contact")}
         >
-          Let's Build
+          Let&apos;s Build
         </NavbarButton>
       </NavBody>
 
@@ -98,7 +98,7 @@ export function Navigation() {
               variant="primary"
               className="w-full"
             >
-              Let's Build
+              Let&apos;s Build
             </NavbarButton>
           </div>
         </MobileNavMenu>
