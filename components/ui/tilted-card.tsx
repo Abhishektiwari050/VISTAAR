@@ -1,11 +1,10 @@
 "use client";
 
-"use client";
-
 import type { SpringOptions } from "framer-motion";
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface TiltedCardProps {
     imageSrc?: string;
@@ -87,7 +86,7 @@ export default function TiltedCard({
     }
 
     return (
-        <figure
+        <motion.figure
             ref={ref}
             className={cn("relative w-full h-full [perspective:800px] flex flex-col items-center justify-center", className)}
             style={{
@@ -114,7 +113,6 @@ export default function TiltedCard({
                         {children}
                     </div>
                 ) : (
-                    // eslint-disable-next-line @next/next/no-img-element
                     <motion.div
                         className="absolute top-0 left-0 w-full h-full rounded-[15px] overflow-hidden will-change-transform [transform:translateZ(0)]"
                         style={{
@@ -122,10 +120,11 @@ export default function TiltedCard({
                             height: imageHeight,
                         }}
                     >
-                        <img
-                            src={imageSrc}
+                        <Image
+                            src={imageSrc || ""}
                             alt={altText}
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
                         />
                     </motion.div>
                 )}
@@ -152,6 +151,6 @@ export default function TiltedCard({
                     {captionText}
                 </motion.figcaption>
             )}
-        </figure>
+        </motion.figure>
     );
 }

@@ -154,13 +154,8 @@ export function CapabilitiesLab() {
               <CometCard key={index} className="w-full max-w-sm">
                 <button
                   type="button"
-                  className="flex w-full cursor-pointer flex-col items-stretch rounded-[16px] border-0 bg-[#1F2121] p-2 md:p-4 saturate-0 transition-all duration-300 hover:saturate-100 h-[350px] md:h-[400px]"
+                  className="flex w-full cursor-pointer flex-col items-stretch rounded-[16px] border-0 bg-[#1F2121] p-2 md:p-4 saturate-0 transition-all duration-300 hover:saturate-100 h-[350px] md:h-[400px] [transform-style:preserve-3d] transform-none opacity-100"
                   onClick={() => setActiveShowcase(index)}
-                  style={{
-                    transformStyle: "preserve-3d",
-                    transform: "none",
-                    opacity: 1,
-                  }}
                 >
                   <div className="flex-1 p-2">
                     <div className="relative aspect-[3/4] w-full h-full">
@@ -170,16 +165,12 @@ export function CapabilitiesLab() {
                       <img
                         loading="lazy"
                         decoding="async"
-                        className="absolute inset-0 h-full w-full rounded-[12px] bg-[#000000] object-cover contrast-75 hover:contrast-100 transition-all duration-300"
+                        className="absolute inset-0 h-full w-full rounded-[12px] bg-[#000000] object-cover contrast-75 hover:contrast-100 transition-all duration-300 shadow-[0px_5px_6px_0px_rgba(0,0,0,0.05)] opacity-100"
                         alt={item.title}
                         src={item.image || "https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=800&auto=format&fit=crop"}
                         onLoad={(e) => {
                           const loader = e.currentTarget.previousElementSibling as HTMLElement;
                           if (loader) loader.style.display = 'none';
-                        }}
-                        style={{
-                          boxShadow: "rgba(0, 0, 0, 0.05) 0px 5px 6px 0px",
-                          opacity: 1,
                         }}
                       />
                     </div>
