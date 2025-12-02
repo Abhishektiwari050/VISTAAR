@@ -5,6 +5,7 @@ import TestimonialCarousel from "@/components/ui/TestimonialCarousel"
 import { FadeIn } from "@/components/motion/MotionWrappers"
 import { HoverEffect } from "@/components/ui/card-hover-effect"
 import { SparklesCore } from "@/components/ui/sparkles"
+import { Spotlight } from "@/components/ui/Spotlight"
 
 const services = [
   {
@@ -48,6 +49,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-black pt-24 pb-20 bg-grid-white/[0.02] relative overflow-hidden">
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
 
       {/* Sparkles Hero Background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
@@ -63,41 +65,44 @@ export default function ServicesPage() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <FadeIn className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
-            Solutions That <span className="text-accent">Scale</span>
+        <FadeIn className="text-center max-w-3xl mx-auto mb-20 md:mb-32 pt-10">
+          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-8 tracking-tight">
+            Solutions That <span className="text-cyan-500">Scale</span>
           </h1>
-          <p className="text-xl text-gray-400 leading-relaxed">
+          <p className="text-xl md:text-2xl text-neutral-400 leading-relaxed max-w-2xl mx-auto">
             We don&apos;t just build websites; we build digital ecosystems designed to dominate international markets.
           </p>
         </FadeIn>
 
-        <div className="max-w-5xl mx-auto px-8 mb-24">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 mb-32">
           <HoverEffect items={services} />
         </div>
 
-        <section className="mb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+        <section className="mb-32 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neutral-950/50 to-transparent pointer-events-none" />
+          <div className="text-center mb-16 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
               Client Success Stories
             </h2>
-            <p className="text-gray-400">Don&apos;t just take our word for it.</p>
+            <p className="text-neutral-400 text-lg">Don&apos;t just take our word for it.</p>
           </div>
           <TestimonialCarousel />
         </section>
 
-        <FadeIn className="bg-gradient-to-r from-accent/20 to-blue-600/20 rounded-3xl p-8 md:p-16 text-center border border-white/10 relative overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+        <FadeIn className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 rounded-[2rem] p-8 md:p-20 text-center border border-white/10 relative overflow-hidden max-w-5xl mx-auto group">
+          <div className="absolute inset-0 bg-grid-white/[0.02] opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-8">
               Ready to Automate Your Growth?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-neutral-300 mb-10 max-w-2xl mx-auto leading-relaxed">
               Book a free strategy session with our export technology experts.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-black transition-all duration-200 bg-accent rounded-full hover:bg-accent-hover hover:scale-105 shadow-[0_0_20px_rgba(0,217,255,0.4)]"
+              className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-black transition-all duration-300 bg-white rounded-full hover:bg-cyan-50 hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.3)]"
             >
               Get Started Now
             </a>

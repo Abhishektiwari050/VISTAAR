@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card"
+import { CardContainer, CardBody, CardItem } from "@/components/ui/three-d-card"
 
 interface ServiceCardProps {
     title: string

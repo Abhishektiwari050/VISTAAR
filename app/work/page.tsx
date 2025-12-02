@@ -1,68 +1,89 @@
 "use client"
 
-import { FadeIn } from "@/components/motion/MotionWrappers"
-import { FocusCards } from "@/components/ui/focus-cards"
+import { HeroParallax } from "@/components/hero-parallax"
 
-const caseStudies = [
+const products = [
   {
     title: "Global Exports Ltd",
-    src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop",
-    href: "/work/global-exports"
+    link: "/work/global-exports",
+    thumbnail: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "TechTrade India",
-    src: "https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=2064&auto=format&fit=crop",
-    href: "/work/techtrade"
+    link: "/work/techtrade",
+    thumbnail: "https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=2064&auto=format&fit=crop",
   },
   {
     title: "Patel Spices",
-    src: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop",
-    href: "/work/patel-spices"
+    link: "/work/patel-spices",
+    thumbnail: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "EuroFoods Logistics",
-    src: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070&auto=format&fit=crop",
-    href: "/work/eurofoods"
+    link: "/work/eurofoods",
+    thumbnail: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "Asian Textiles",
-    src: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2072&auto=format&fit=crop",
-    href: "/work/asian-textiles"
+    link: "/work/asian-textiles",
+    thumbnail: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2072&auto=format&fit=crop",
   },
   {
     title: "Future Tech",
-    src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
-    href: "/work/future-tech"
+    link: "/work/future-tech",
+    thumbnail: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "Smart Logistics",
+    link: "/work/smart-logistics",
+    thumbnail: "https://images.unsplash.com/photo-1494412574643-35d324698420?q=80&w=2064&auto=format&fit=crop",
+  },
+  {
+    title: "Eco Packaging",
+    link: "/work/eco-packaging",
+    thumbnail: "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "Urban Fashion",
+    link: "/work/urban-fashion",
+    thumbnail: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "NextGen Auto",
+    link: "/work/nextgen-auto",
+    thumbnail: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2047&auto=format&fit=crop",
+  },
+  {
+    title: "Green Energy",
+    link: "/work/green-energy",
+    thumbnail: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "Cloud Systems",
+    link: "/work/cloud-systems",
+    thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+  },
+  {
+    title: "Agri Exports",
+    link: "/work/agri-exports",
+    thumbnail: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "MediCare Global",
+    link: "/work/medicare-global",
+    thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    title: "EduTech Pro",
+    link: "/work/edutech-pro",
+    thumbnail: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop",
   }
 ]
 
 export default function WorkPage() {
   return (
-    <main className="min-h-screen bg-black pt-24 pb-20">
-      <div className="container mx-auto px-4 md:px-6">
-        <FadeIn className="mb-16 md:mb-24 text-center">
-          <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
-            Selected <span className="text-accent">Work</span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Real results for ambitious exporters. We let the numbers speak for themselves.
-          </p>
-        </FadeIn>
-
-        <div className="mb-24">
-          <FocusCards cards={caseStudies} />
-        </div>
-
-        <FadeIn className="mt-24 text-center">
-          <p className="text-gray-500 mb-6">Want to see more?</p>
-          <a
-            href="/contact"
-            className="text-white font-bold border-b border-accent hover:text-accent transition-colors pb-1"
-          >
-            Request Full Portfolio
-          </a>
-        </FadeIn>
-      </div>
+    <main className="min-h-screen bg-black">
+      <HeroParallax products={products} />
     </main>
   )
 }

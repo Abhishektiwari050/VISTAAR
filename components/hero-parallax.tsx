@@ -11,85 +11,15 @@ import {
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { LoaderOne } from "@/components/ui/loader";
 
-const products = [
-  {
-    title: "TechFlow SaaS Dashboard",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "LuxeStyle Fashion Store",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "MedConnect Clinic Portal",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "Digital Marketing Campaign",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "E-commerce Platform",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "Brand Identity Design",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "Mobile App Development",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "SEO Optimization",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1571677208775-05e04d6e2d05?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "Social Media Strategy",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "Web Development",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "Growth Analytics",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "Content Marketing",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "UI/UX Design",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "Digital Transformation",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop",
-  },
-  {
-    title: "Performance Optimization",
-    link: "#",
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
-  },
-];
-
-export const HeroParallax = () => {
+export const HeroParallax = ({
+  products,
+}: {
+  products: {
+    title: string;
+    link: string;
+    thumbnail: string;
+  }[];
+}) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);

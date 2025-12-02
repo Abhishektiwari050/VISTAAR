@@ -18,7 +18,7 @@ import { testimonials, bentoItems, stickyContent } from "@/lib/constants"
 export default function HomePage() {
   return (
     <SmoothScroll>
-      <main className="min-h-screen w-full bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+      <main className="min-h-screen w-full bg-black/[0.96] antialiased bg-grid-white/[0.02] relative">
         <ScrollProgress />
 
         {/* 0. SPLINE HERO SECTION (Sticky) */}

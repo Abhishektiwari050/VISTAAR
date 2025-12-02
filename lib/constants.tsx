@@ -43,25 +43,65 @@ export const bentoItems = [
     {
         title: "AI-Driven Automation",
         description: "Auto-reply to RFQs 24/7 with intelligent, personalized messages that nurture leads while you sleep.",
-        header: <Skeleton />,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop"
+                    alt="AI Automation"
+                    width={400}
+                    height={200}
+                    className="w-full h-full object-cover"
+                />
+            </div>
+        ),
         icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: "Global SEO Dominance",
         description: "Rank #1 for high-intent buyer keywords in target markets like USA, UK, and UAE.",
-        header: <Skeleton />,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop"
+                    alt="SEO Dominance"
+                    width={400}
+                    height={200}
+                    className="w-full h-full object-cover"
+                />
+            </div>
+        ),
         icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: "Conversion-Focused Design",
         description: "Premium, trust-building web design that turns visitors into serious inquiries.",
-        header: <Skeleton />,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2055&auto=format&fit=crop"
+                    alt="Web Design"
+                    width={400}
+                    height={200}
+                    className="w-full h-full object-cover"
+                />
+            </div>
+        ),
         icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: "Centralized CRM",
         description: "Track every interaction, deal stage, and follow-up in one unified dashboard.",
-        header: <Skeleton />,
+        header: (
+            <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden">
+                <Image
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+                    alt="CRM Dashboard"
+                    width={400}
+                    height={200}
+                    className="w-full h-full object-cover"
+                />
+            </div>
+        ),
         icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
     },
 ];

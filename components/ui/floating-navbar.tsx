@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 export const FloatingNav = ({
     navItems,
@@ -46,9 +47,11 @@ export const FloatingNav = ({
                     )}
                 >
                     {/* Replaced placeholder with actual logo */}
-                    <img
+                    <Image
                         src="/vistaar-logo.svg"
                         alt="VISTAAR"
+                        width={32}
+                        height={32}
                         className="h-8 w-auto"
                     />
                     <span className="text-white font-bold text-xl tracking-tight">VISTAAR</span>

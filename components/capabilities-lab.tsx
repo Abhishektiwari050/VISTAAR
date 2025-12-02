@@ -5,7 +5,7 @@ import { LoaderOne } from "@/components/ui/loader"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
+import { CardBody, CardContainer, CardItem } from "@/components/ui/three-d-card"
 import { CometCard } from "@/components/ui/comet-card"
 import {
   Palette,
